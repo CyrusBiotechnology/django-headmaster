@@ -6,8 +6,7 @@ dependencies:
     - django-admin.py startproject headmaster
 
     # Inject minimum configuration to activate Headmaster
-    - echo "HEADMASTER = {'STATIC': [('test', 'SyONDFv4a')]}" >> headmaster/headmaster/settings.py
-    - echo "MIDDLEWARE_CLASSES = ('django_headmaster.Middleware',)" >> headmaster/headmaster/settings.py
+    - cat test_harnesses/django_settings_fragment.py >> headmaster/headmaster/settings.py
 
 
 test:
