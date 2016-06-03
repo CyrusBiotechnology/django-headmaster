@@ -5,7 +5,7 @@ import os
 
 HEADMASTER = {
     'STATIC': [
-        ('Headmaster-Test-Header', os.environ.get('HEADMASTER_TEST_STRING'))
+        ('Headmaster-Test-Header', os.environ['HEADMASTER_TEST_STRING'])
     ]
 }
 

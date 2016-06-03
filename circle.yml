@@ -15,7 +15,7 @@ dependencies:
 
 test:
   pre:
-    - pycodestyle . --exclude="env,venv,build,.git,lib" --ignore="E501" --show-source
+    - pycodestyle . --exclude="env,venv,build,.git,lib,test_harnesses" --ignore="E501" --show-source
   override:
 
     # Run a simple functional test
