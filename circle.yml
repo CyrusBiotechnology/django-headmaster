@@ -12,10 +12,11 @@ dependencies:
 test:
   pre:
     - pycodestyle . --exclude="env,venv,build,.git,lib" --ignore="E501" --show-source
-  override:
 
     # Start a Django server
-    - ./headmaster/manage.py runserver 127.0.0.0:8000 &
+    - ./headmaster/manage.py runserver 127.0.0.0:8000:
+      background: true
+  override:
 
     # Run a simple functional test
-    - [[ -n "curl -I --silent localhost:8000 | grep SyONDFv4a" ]] || exit 1
+    - /test_harnesses/functional_test.sh 8000 SyONDFv4a
