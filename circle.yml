@@ -1,7 +1,22 @@
 dependencies:
   pre:
-    - pip install pycodestyle
+    - pip install pycodestyle django
+
+    # Set up a Django project to test with
+    - django-admin.py startproject headmaster
+
+    # Inject minimum configuration to activate Headmaster
+    - echo "HEADMASTER = {'STATIC': [('test', 'SyONDFv4a')]}" >> headmaster/headmaster/settings.py
+    - echo "MIDDLEWARE_CLASSES = ('django_headmaster.Middleware',)" >> headmaster/headmaster/settings.py
+
 
 test:
   pre:
     - pycodestyle . --exclude="env,venv,build,.git,lib" --ignore="E501" --show-source
+  override:
+
+    # Start a Django server
+    - ./headmaster/manage.py runserver 127.0.0.0:8000 &
+
+    # Run a simple functional test
+    - [[ -n "curl -I --silent localhost:8000 | grep SyONDFv4a" ]] || exit 1
