@@ -1,3 +1,7 @@
+machine:
+  environment:
+    HEADMASTER_TEST_STRING: ehQ30ia6Reh7shM4O5zH
+
 dependencies:
   pre:
     - pip install pycodestyle django
@@ -12,11 +16,7 @@ dependencies:
 test:
   pre:
     - pycodestyle . --exclude="env,venv,build,.git,lib" --ignore="E501" --show-source
-
-    # Start a Django server
-    - ./headmaster/manage.py runserver 127.0.0.0:8000:
-      background: true
   override:
 
     # Run a simple functional test
-    - /test_harnesses/functional_test.sh 8000 SyONDFv4a
+    - /test_harnesses/functional_test.sh headmaster 8000 ehQ30ia6Reh7shM4O5zH

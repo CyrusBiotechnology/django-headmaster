@@ -1,9 +1,11 @@
 """ These settings should be appended to a Django settings file. They are the
 minimum configuration needed to run Headmaster.
 """
+import os
+
 HEADMASTER = {
     'STATIC': [
-        ('test', 'SyONDFv4a')
+        ('Headmaster-Test-Header', os.environ.get('HEADMASTER_TEST_STRING'))
     ]
 }
 
