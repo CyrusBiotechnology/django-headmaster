@@ -16,7 +16,7 @@ Install from PyPi!
 
     pip install django-headmaster
 
-Now, crack open your `settings` file. Add `django_headmaster` to your middlewares
+Now, crack open your `settings` file. Add `django_headmaster.Middleware` to your middlewares
 setting...
 
     MIDDLEWARE_CLASSES = (
