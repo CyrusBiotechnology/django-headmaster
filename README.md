@@ -12,11 +12,11 @@ inserts extra headers. Currently only static configurations are supported.
 
 ## Installation
 
-Install from pypi!
+Install from PyPi!
 
     pip install django-headmaster
 
-Now, crack open your settings.py file and add `django_headmaster` to your middlewares 
+Now, crack open your `settings` file. Add `django_headmaster` to your middlewares
 setting...
 
     MIDDLEWARE_CLASSES = (
