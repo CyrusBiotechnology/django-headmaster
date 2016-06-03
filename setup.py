@@ -1,6 +1,6 @@
 from setuptools import setup
 
-setup(name='django_headmaster',
+setup(name='django-headmaster',
       version='0.0.1',
       description='Add extra headers to your site via your settings file',
       url='http://github.com/CyrusBiotechnology/django-headmaster',

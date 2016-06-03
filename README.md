@@ -1,6 +1,7 @@
 # Django Static Headers
 
-[![pypi-version]][pypi]
+[![CircleCI](https://circleci.com/gh/CyrusBiotechnology/django-headmaster.svg?style=svg)](https://circleci.com/gh/CyrusBiotechnology/django-headmaster)
+[![PyPI version](https://badge.fury.io/py/django-headmaster.svg)](https://badge.fury.io/py/django-headmaster)
 
 # Purpose
 
